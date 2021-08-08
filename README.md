@@ -4,3 +4,5 @@ Uses Ethernet with ip of 192.168.1.5 to serve dns/adblock server.
 Usage:
 sudo chmod +x filename
 sudo ./filename
+Make sure add your pi ip to your router as only DNS server.
+You can also disable your routers dhcp server and let pi handle dhcp.
