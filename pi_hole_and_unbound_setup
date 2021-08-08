@@ -14,9 +14,12 @@ echo "Installing unbound..."
 sudo apt-get install unbound
 echo "Downloading Internets main root servers ip and writing to file. (/var/lib/unbound/root.hints)"
 wget https://www.internic.net/domain/named.root -qO- | sudo tee /var/lib/unbound/root.hints
+echo "Giving ownership of root.hints to unbound:unbound"
+sudo chown unbound:unbound /var/lib/unbound/root.hints
 echo "Writing unbound settings to /etc/unbound/unbound.conf"
 sudo tee -a /etc/unbound/unbound.conf.d/pi-hole.conf > /dev/null <<EOT
 server:
+    root-hints: "/var/lib/unbound/root.hints"
     # If no logfile is specified, syslog is used
     # logfile: "/var/log/unbound/unbound.log"
     verbosity: 0
