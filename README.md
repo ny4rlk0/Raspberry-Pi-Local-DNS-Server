@@ -15,5 +15,5 @@
   sudo bash update_dns_server.sh
  ```
 * Make sure add your pi ip to your router as only DNS server.
-* You can also disable your routers dhcp server and let pi handle dhcp. 
+* You can also disable your routers DHCP server and let pi handle it. 
 * In that case you should first activate pi-hole's DHCP server then disable the DHCP server in your router.
