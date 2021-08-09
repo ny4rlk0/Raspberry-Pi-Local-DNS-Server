@@ -1,11 +1,4 @@
 #!/bin/bash
-sudo apt-get install pihole
-echo "Adding static ip of 192.168.1.5/24 (eth0) to /etc/dhcpcd.conf"
-echo " " | sudo tee -a /etc/dhcpcd.conf > /dev/null
-echo "interface eth0" | sudo tee -a /etc/dhcpcd.conf > /dev/null
-echo "static ip_address=192.168.1.5/24" | sudo tee -a /etc/dhcpcd.conf > /dev/null
-echo "static routers=192.168.1.1" | sudo tee -a /etc/dhcpcd.conf > /dev/null
-echo "static domain_name_servers=192.168.1.1" | sudo tee -a /etc/dhcpcd.conf > /dev/null
 echo "Installing pi hole..."
 sudo git clone --depth 1 https://github.com/pi-hole/pi-hole.git Pi-hole
 sudo cd "Pi-hole/automated install/"
@@ -88,7 +81,7 @@ sudo service pihole restart
 sudo service dhcpcd restart
 echo "Operation Finished!"
 echo "Now you need to open web panel (pi ip address) Settings > DNS > remove all other dns servers and tick Custom 1 and write 127.0.0.1#5335 exactly as it is. save and exit."
-echo "Now only thing left is remove your dns server in your modem (eg:192.168.1.1) and add 192.168.1.5 (pi ip address) as only dns."
+echo "Now only thing left is remove your dns server in your modem (eg:192.168.1.1) and add ip you set while installing pi-hole."
 echo "Do not add any other fallback dns as it will use that if you add."
 echo "If it requires 2 just type same addresses again."
 echo "This goes without  saying but you should update your dns servers at the least once in six months by running the update_dns_servers script as root."
