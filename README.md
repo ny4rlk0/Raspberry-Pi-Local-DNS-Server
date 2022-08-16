@@ -5,7 +5,7 @@
 
 * Install:
 ```sh
-  git clone --depth 1 https://github.com/ny4rlk0/Raspberry-Pi-Pi-hole-Unbound-Private-DNS-Server-Setup.git nyarlko
+  git clone --depth 1 https://github.com/ny4rlk0/Raspberry-Pi-Local-DNS-Server.git nyarlko
   cd "nyarlko/"
   sudo bash pi_hole_and_unbound_setup.sh
  ```
